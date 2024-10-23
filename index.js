@@ -164,6 +164,26 @@ class Linkedlist{
         }
         return false
     }
+    removeDuplicates(){
+	    let temp = this.head;
+	    let pre = null;
+	    let myset = new Set();
+	    
+	    while (temp != null){
+	        if(myset.has(temp.value)){
+	            pre.next = temp.next;
+                this.length--;
+	        }
+	        else{
+	            myset.add(temp.value);
+	            pre = temp;
+	        }
+	        temp = temp.next
+	        
+	        
+	        
+	    }
+	}
 }
 
 // create LinkedList :
