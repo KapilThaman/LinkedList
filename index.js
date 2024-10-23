@@ -117,6 +117,53 @@ class Linkedlist{
         return element
         
     }
+
+    findMiddleNode(){
+            
+            
+        let temp = this.head;
+        let pre = this.head;
+        
+        if(this.head == null){
+            return null
+        }
+        
+        if(this.head.next == null){
+            return this.head ;
+        }
+        
+        while(temp !== null && temp.next !== null){
+            
+            
+            
+            temp = temp.next.next;
+            pre = pre.next;
+            
+            
+        }
+        return pre
+    }
+    hasLoop(){
+        let slow = this.head;
+        let fast = this.head;
+        
+        if(this.head == null){
+            return false
+        }
+        if(this.head.next == null){
+            return false
+        }
+        
+        while(fast !== null && fast.next !== null){
+            fast = fast.next.next;
+            slow = slow.next;
+            
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false
+    }
 }
 
 // create LinkedList :
